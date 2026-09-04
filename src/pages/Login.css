@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,300;0,400;0,600;1,500&display=swap');
+
+.login-page {
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(56, 61, 66);
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.header {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5vh 3vh;
+  align-items: center;
+  color: white;
+}
+
+.header .bi-clipboard-heart-fill {
+  font-size: 2.5rem;
+  background-color: rgb(5, 76, 100);
+  padding: 2rem;
+  border-radius: 50px;
+}
+
+.header > p {
+  margin-top: 5px;
+}
+
+.main {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(100, 112, 117);
+  width: 450px;
+  height: 580px;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.form {
+  align-items: flex-start;
+}
+
+.form label {
+  color: white;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(161, 168, 168);
+  background-color: rgb(56, 61, 66);
+  color: white;
+  box-sizing: border-box;
+}
+
+#button {
+  margin-top: 1.8rem;
+  background-color: white;
+  font-size: 16px;
+  color: black;
+}
+
+.demo-hint {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: rgb(218, 230, 230);
+  font-size: 14px;
+}
