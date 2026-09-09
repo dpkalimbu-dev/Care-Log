@@ -19,8 +19,8 @@ function Dashboard({username}){
         <div className="dashboard-page">
             <header className="dashboard-header">
                 <div className="dashboard-nav">
-                    <span className="nav-item active">Home</span>
-                    <span className="nav-item">POC</span>
+                    <span className="nav-item">Home</span>
+                    <span className="nav-item active" >POC</span>
                 </div>
                 <div className="dashboard-welcome">
                     <p>Welcome, {username}</p>
