@@ -83,3 +83,10 @@
   color: #9a9a95;
   margin: 0;
 }
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
