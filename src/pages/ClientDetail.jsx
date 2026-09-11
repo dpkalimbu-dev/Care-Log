@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { clientList } from "../data/clients";
 import CategoryCard from "../components/CategoryCard";
+import LogEntryForm from "../components/LogEntryForm";
 import "./ClientDetail.css";
 
 const categories = [
@@ -14,6 +16,7 @@ const categories = [
 function ClientDetail({ logEntries, onAddEntry, currentUser }) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [activeCategory, setActiveCategory] = useState(null);
 
   const client = clientList.find((c) => c.id === Number(id));
 
@@ -29,8 +32,9 @@ function ClientDetail({ logEntries, onAddEntry, currentUser }) {
     (entry) => entry.clientId === client.id
   );
 
-  function handleCategoryClick(category) {
-    console.log("Clicked:", category);
+  function handleSaveEntry(newEntry) {
+    onAddEntry(newEntry);
+    setActiveCategory(null);
   }
 
   return (
@@ -61,7 +65,7 @@ function ClientDetail({ logEntries, onAddEntry, currentUser }) {
           <CategoryCard
             key={category}
             label={category}
-            onClick={() => handleCategoryClick(category)}
+            onClick={() => setActiveCategory(category)}
           />
         ))}
       </div>
@@ -79,6 +83,16 @@ function ClientDetail({ logEntries, onAddEntry, currentUser }) {
           ))
         )}
       </div>
+
+      {activeCategory && (
+        <LogEntryForm
+          category={activeCategory}
+          client={client}
+          currentUser={currentUser}
+          onSave={handleSaveEntry}
+          onCancel={() => setActiveCategory(null)}
+        />
+      )}
     </div>
   );
 }

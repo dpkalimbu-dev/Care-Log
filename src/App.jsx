@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import ClientDetail from "./pages/ClientDetail";
 import { seedLogEntries } from "./data/logEntries";
 
+
 function App() {
   const [currentUser, setCurrentUser] = useState(() => {
     const saved = localStorage.getItem("careLogCurrentUser");

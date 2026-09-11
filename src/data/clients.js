@@ -3,37 +3,37 @@
 export const clientList = [
     {
         id: 1,
-        name: "Kaya Gurung",
+        name: "Maya Gurung",
         unit: "105-001",
         status: "active",
     },
     {
         id: 2,
-        name: "Puja Gurung",
+        name: "Preeti Gurung",
         unit: "104-002",
         status: "active",
     },
     {
         id: 3,
-        name: "Bish Adhikari",
+        name: "Binod Adhikari",
         unit: "103-003",
         status: "discharged",
     },
     {
         id: 4,
-        name: "Mala Shrestha",
+        name: "Kopila Shrestha",
         unit: "102-002",
         status: "active",
     },
     {
         id: 5,
-        name: "Jiwan Gurung",
+        name: "Sanjay Gurung",
         unit: "101-001",
         status: "active",
     },
     {
         id: 6,
-        name: "Dpka Limbu",
+        name: "Vedika Limbu",
         unit: "100-023",
         status: "active",
     },
