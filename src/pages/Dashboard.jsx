@@ -2,7 +2,7 @@ import { clientList } from "../data/clients";
 import ClientCard from "../components/ClientCard";
 import "./Dashboard.css";
 
-function Dashboard({username}){
+function Dashboard({username, onLogout}){
     const today = new Date();
     const formattedDate = today.toLocaleDateString("en-US", {
         weekday: "short",
@@ -27,6 +27,7 @@ function Dashboard({username}){
                     <p className="dashboard-time">
                         {formattedDate} {formattedTime}
                     </p>
+                    <button className="logout-btn" onClick={onLogout}>Log out</button>
                 </div>
             </header>
             <main className="client-grid">

@@ -25,6 +25,10 @@ function App() {
     localStorage.setItem("careLogEntries", JSON.stringify(logEntries));
   }, [logEntries]);
 
+  function handleLogout() {
+  setCurrentUser(null);
+}
+
   function addLogEntry(newEntry) {
     setLogEntries((prevEntries) => [...prevEntries, newEntry]);
   }
@@ -36,7 +40,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard username={currentUser} />} />
+        <Route path="/" element={<Dashboard username={currentUser} onLogout={handleLogout}/>} />
         <Route
           path="/clients/:id"
           element={
