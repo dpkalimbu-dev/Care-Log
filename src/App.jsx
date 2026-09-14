@@ -33,6 +33,22 @@ function App() {
     setLogEntries((prevEntries) => [...prevEntries, newEntry]);
   }
 
+  function updateLogEntry(id, updatedFields){
+    setLogEntries((prevEntries) =>
+      prevEntries.map((entry) =>
+        entry.id === id ? {...entry, ...updatedFields} : entry
+      )
+    );
+  }
+
+  function markEntryCorrected(id){
+    setLogEntries((prevEntries) =>
+      prevEntries.map((entry) =>
+      entry.id === id ? {...entry, corrected: true } : entry
+      )
+    );
+  }
+
   if (!currentUser) {
     return <Login onLoginSuccess={(username) => setCurrentUser(username)} />;
   }
@@ -47,6 +63,8 @@ function App() {
             <ClientDetail
               logEntries={logEntries}
               onAddEntry={addLogEntry}
+              onUpdateEntry={updateLogEntry}
+              onCorrectEntry={markEntryCorrected}
               currentUser={currentUser}
             />
           }

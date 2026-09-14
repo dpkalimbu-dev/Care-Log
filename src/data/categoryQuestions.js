@@ -2,7 +2,7 @@
 export const categoryQuestions = {
   "Food Intake": [
     {
-      question: "EATING: SELF PERFORMANCE - How does resident eats and drinks, regardless of skill. Do not include eating/drinking during mediacation pass.",
+      question: "EATING: SUPPORT PROVIDED - How does resident eats and drinks, regardless of skill. Do not include eating/drinking during mediacation pass.",
       options: [
         "INDEPENDENT - No help or staff oversight at any time",
         "SUPERVISION - Oversight, encouragement or cueing",
@@ -12,33 +12,33 @@ export const categoryQuestions = {
       ],
     },
     {
-      question: "How much did they eat?",
+      question: "How much did the resident eat?",
       options: ["0-25%", "25-50%", "50-75%", "75-100%"],
     },
   ],
 
   "Fluid Intake": [
     {
-      question: "How many cups of fluid?",
+      question: "FLUIED INTAKE: How many cups of fluid did resident drink?",
       type: "number",
     },
   ],
 
   "Bowel Movement": [
     {
-      question: "Did the client have a BM?",
+      question: "Did the client had a bowel movement during this shift?",
       options: ["Yes", "No"],
     },
     {
       question: "What type?",
-      options: ["Normal", "Loose", "Hard", "Constipated", "N/A"],
+      options: ["Normal", "Loose", "Hard/Constipated", "N/A"],
     //   showIf: { questionIndex: 0, equals: "Yes" },
     },
   ],
 
   "Transfer": [
     {
-      question: "How did the client transfer?",
+      question: "TRANSFER: SUPPORT PROVIDED- How did the resident transfer from bed to wheelchair?",
       options: [
         "Independent",
         "Supervision",
@@ -48,7 +48,7 @@ export const categoryQuestions = {
       ],
     },
     {
-      question: "Support provided?",
+      question: "TRANSFER: SUPPORT PROVIDED- What kind of help was provided by the staff to resident during the transfer?",
       options: [
         "No setup or physical help from staff",
         "Setup help only",

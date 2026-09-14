@@ -2,9 +2,17 @@ import { useState } from "react";
 import { categoryQuestions } from "../data/categoryQuestions";
 import "./LogEntryForm.css";
 
-function LogEntryForm({ category, client, currentUser, onSave, onCancel }) {
+function LogEntryForm({
+  category,
+  client,
+  currentUser,
+  initialAnswers,
+  editingEntryId,
+  onSave,
+  onCancel,
+}) {
   const questions = categoryQuestions[category];
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState(initialAnswers || {});
 
   function handleAnswer(questionIndex, value) {
     setAnswers((prevAnswers) => ({
@@ -13,7 +21,7 @@ function LogEntryForm({ category, client, currentUser, onSave, onCancel }) {
     }));
   }
 
-  function shouldShowQuestion(q, index) {
+  function shouldShowQuestion(q) {
     if (!q.showIf) return true;
     const requiredAnswer = answers[q.showIf.questionIndex];
     return requiredAnswer === q.showIf.equals;
@@ -26,16 +34,20 @@ function LogEntryForm({ category, client, currentUser, onSave, onCancel }) {
 
     const value = parts.join(", ");
 
-    const newEntry = {
-      id: Date.now(),
-      clientId: client.id,
-      staffUsername: currentUser,
-      timestamp: new Date().toISOString(),
-      category: category,
-      value: value,
-    };
-
-    onSave(newEntry);
+    if (editingEntryId) {
+      onSave({ id: editingEntryId, value, answers, category });
+    } else {
+      onSave({
+        id: Date.now(),
+        clientId: client.id,
+        staffUsername: currentUser,
+        timestamp: new Date().toISOString(),
+        category,
+        value,
+        answers,
+        corrected: false,
+      });
+    }
   }
 
   return (
@@ -45,7 +57,7 @@ function LogEntryForm({ category, client, currentUser, onSave, onCancel }) {
         <p className="modal-subtitle">{client.name}</p>
 
         {questions.map((q, index) => {
-          if (!shouldShowQuestion(q, index)) return null;
+          if (!shouldShowQuestion(q)) return null;
 
           return (
             <div className="modal-question" key={index}>
@@ -74,7 +86,9 @@ function LogEntryForm({ category, client, currentUser, onSave, onCancel }) {
                       key={option}
                       type="button"
                       className={
-                        answers[index] === option ? "option-btn selected" : "option-btn"
+                        answers[index] === option
+                          ? "option-btn selected"
+                          : "option-btn"
                       }
                       onClick={() => handleAnswer(index, option)}
                     >
