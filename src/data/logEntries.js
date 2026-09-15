@@ -1,6 +1,6 @@
 // Starter log entries - used only the first time the app runs,
 // Before any real entries have been saved to localStorage.
-
+// 
 export const seedLogEntries = [
     {
         id: 1,

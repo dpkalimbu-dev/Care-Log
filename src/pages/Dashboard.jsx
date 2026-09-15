@@ -1,4 +1,5 @@
 import { clientList } from "../data/clients";
+import AppHeader from "../components/AppHeader";
 import ClientCard from "../components/ClientCard";
 import "./Dashboard.css";
 
@@ -15,28 +16,25 @@ function Dashboard({username, onLogout}){
         minute: "2-digit",
     });
 
-    return(
-        <div className="dashboard-page">
-            <header className="dashboard-header">
-                <div className="dashboard-nav">
-                    <span className="nav-item">Home</span>
-                    <span className="nav-item active" >POC</span>
-                </div>
-                <div className="dashboard-welcome">
-                    <p>Welcome, {username}</p>
-                    <p className="dashboard-time">
-                        {formattedDate} {formattedTime}
-                    </p>
-                    <button className="logout-btn" onClick={onLogout}>Log out</button>
-                </div>
-            </header>
-            <main className="client-grid">
-                {clientList.map((client)=>( 
-                    <ClientCard key={client.id} client={client}/>
-                    ))}
-            </main>
-        </div>
-    );
+    return (
+  <div className="dashboard-page">
+    <AppHeader activeTab="poc">
+      <p>Welcome, {username}</p>
+      <p className="dashboard-time">
+        {formattedDate} {formattedTime}
+      </p>
+      <button className="logout-btn" onClick={onLogout}>
+        Log out
+      </button>
+    </AppHeader>
+
+    <main className="client-grid">
+      {clientList.map((client) => (
+        <ClientCard key={client.id} client={client} />
+      ))}
+    </main>
+  </div>
+);
 }
 
 export default Dashboard;

@@ -1,62 +1,18 @@
 .dashboard-page {
   min-height: 100vh;
-  background-color: #f4f5f3;
+  background-color: var(--color-bg);
 }
 
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0dd;
-}
-
-.dashboard-nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-item {
-  font-size: 14px;
-  font-weight: 500;
-  color: #6b6b67;
-  cursor: pointer;
-}
-
-.nav-item.active {
-  color: #1c1c1a;
-  border-bottom: 2px solid #2f6f5e;
-  padding-bottom: 4px;
-}
-
-.dashboard-welcome {
-  text-align: right;
-}
-
-.dashboard-welcome p {
-  margin: 0;
-  font-size: 13px;
-  color: #1c1c1a;
-}
-
-.dashboard-datetime {
-  color: #6b6b67 !important;
+.dashboard-time {
+  color: var(--color-text-faint) !important;
   font-size: 12px !important;
-  margin: 10px;
 }
 
-.client-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 16px;
-  padding: 1.5rem;
-}
 .logout-btn {
   margin-top: 6px;
   background: none;
-  border: 1px solid #d6d6d1;
-  color: #6b6b67;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
   font-size: 12px;
   padding: 4px 10px;
   border-radius: 6px;
@@ -64,6 +20,13 @@
 }
 
 .logout-btn:hover {
-  background-color: #f0f0ed;
-  color: #1c1c1a;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 1.5rem;
 }

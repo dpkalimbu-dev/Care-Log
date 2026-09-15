@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { clientList } from "../data/clients";
+import AppHeader from "../components/AppHeader";
 import CategoryCard from "../components/CategoryCard";
 import LogEntryForm from "../components/LogEntryForm";
 import DuplicateEntryPrompt from "../components/DuplicateEntryPrompt";
@@ -107,6 +108,8 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, c
 
   return (
     <div className="client-detail-page">
+      <AppHeader activeTab="poc"/>
+      <div className="client-detail-content"></div>
       <p className="back-link" onClick={() => navigate("/")}>
         &larr; Back to Dashboard
       </p>
