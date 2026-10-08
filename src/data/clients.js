@@ -22,19 +22,55 @@ export const clientList = [
     {
         id: 4,
         name: "Kopila Shrestha",
-        unit: "102-002",
+        unit: "102-004",
         status: "active",
     },
     {
         id: 5,
         name: "Sanjay Gurung",
-        unit: "101-001",
+        unit: "101-005",
         status: "active",
     },
     {
         id: 6,
         name: "Vedika Limbu",
-        unit: "100-023",
+        unit: "100-006",
+        status: "active",
+    },
+    {
+        id: 7,
+        name: "Anjali Thapa",
+        unit: "107-007",
+        status: "discharged",
+    },
+    {
+        id: 8,
+        name: "Ramesh Koirala",
+        unit: "108-008",
+        status: "active",
+    },
+    {
+        id: 9,
+        name: "Devika Rai",
+        unit: "109-023",
+        status: "active",
+    },
+    {
+        id: 10,
+        name: "Nirmal Basnet",
+        unit: "110-024",
+        status: "active",
+    },
+    {
+        id: 11,
+        name: "Prakash Tamang",
+        unit: "111-013",
+        status: "active",
+    },
+    {
+        id: 12,
+        name: "Sunita Magar",
+        unit: "112-041",
         status: "active",
     },
 ];

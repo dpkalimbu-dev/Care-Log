@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ClientDetail from "./pages/ClientDetail";
@@ -49,6 +50,10 @@ function App() {
     );
   }
 
+  function deleteLogEntry(id) {
+  setLogEntries((prevEntries) => prevEntries.filter((entry) => entry.id !== id));
+}
+
   if (!currentUser) {
     return <Login onLoginSuccess={(username) => setCurrentUser(username)} />;
   }
@@ -56,7 +61,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard username={currentUser} onLogout={handleLogout}/>} />
+        <Route
+          path="/"
+          element={
+          <Dashboard username={currentUser} onLogout={handleLogout} logEntries={logEntries} />
+          }
+          />        
+          <Route path="/home" element={<Home logEntries={logEntries} username={currentUser} onLogout={handleLogout}/>} />
+       
         <Route
           path="/clients/:id"
           element={
@@ -65,6 +77,7 @@ function App() {
               onAddEntry={addLogEntry}
               onUpdateEntry={updateLogEntry}
               onCorrectEntry={markEntryCorrected}
+              onDeleteEntry={deleteLogEntry}
               currentUser={currentUser}
             />
           }

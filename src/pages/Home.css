@@ -1,0 +1,144 @@
+.home-page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.home-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  padding: 1.1rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.stat-icon-clients {
+  background-color: #e1f5ee;
+  color: #0f6e56;
+}
+
+.stat-icon-entries {
+  background-color: #e6f1fb;
+  color: #185fa5;
+}
+
+.stat-icon-pending {
+  background-color: #faeeda;
+  color: #854f0b;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 3px 0 0;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-faint);
+  letter-spacing: 0.3px;
+  margin: 0 0 10px;
+}
+
+.list-card {
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 26px;
+}
+
+.schedule-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-icon {
+  color: var(--color-text-faint);
+  font-size: 14px;
+}
+
+.schedule-time {
+  color: var(--color-text-faint);
+  min-width: 55px;
+}
+
+.schedule-client {
+  font-weight: 500;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.schedule-desc {
+  color: var(--color-text-muted);
+}
+
+.notice-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--color-text);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.notice-row:last-child {
+  border-bottom: none;
+}
+
+.notice-icon {
+  color: var(--color-accent-secondary);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.empty-message {
+  padding: 14px;
+  font-size: 13px;
+  color: var(--color-text-faint);
+  margin: 0;
+}

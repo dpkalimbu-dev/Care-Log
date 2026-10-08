@@ -3,30 +3,40 @@
   background-color: var(--color-bg);
 }
 
+.dashboard-content {
+  padding: 2rem 1.5rem;
+}
+
+.dashboard-toolbar {
+  max-width: 700px;
+  margin: 0 auto 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-faint);
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.search-input {
+  width: 180px;
+  font-size: 13px;
+}
+
+.client-grid {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
 .dashboard-time {
   color: var(--color-text-faint) !important;
   font-size: 12px !important;
 }
 
-.logout-btn {
-  margin-top: 6px;
-  background: none;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.logout-btn:hover {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-}
-
-.client-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 16px;
-  padding: 1.5rem;
-}

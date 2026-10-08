@@ -4,7 +4,9 @@
 }
 
 .client-detail-content {
-  padding: 1.5rem;
+   max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
 .back-link {
@@ -65,8 +67,8 @@
 .category-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .entries-list {
@@ -79,8 +81,10 @@
 .entry-row {
   display: flex;
   gap: 12px;
+  text-align: center;
   padding: 10px 14px;
   font-size: 13px;
+  text-align: left;
   border-bottom: 0.5px solid var(--color-border);
 }
 
@@ -95,6 +99,7 @@
 
 .entry-category {
   flex: 1;
+  text-align: left;
   color: var(--color-text);
 }
 
@@ -122,4 +127,20 @@
   font-size: 13px;
   color: var(--color-text-faint);
   margin: 0;
+}
+
+.entry-delete {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.entry-delete:hover {
+  background-color: #a4423d;
+  border-color: #b3261e;
+  color: #ffffff;
 }

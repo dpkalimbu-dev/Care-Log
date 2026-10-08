@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { clientList } from "../data/clients";
+import { formatTime } from "../utils/formatTime";
+import { isToday } from "../utils/isToday";
 import AppHeader from "../components/AppHeader";
 import CategoryCard from "../components/CategoryCard";
 import LogEntryForm from "../components/LogEntryForm";
 import DuplicateEntryPrompt from "../components/DuplicateEntryPrompt";
-import { formatTime } from "../utils/formatTime";
 import "./ClientDetail.css";
 
 const categories = [
@@ -16,17 +17,9 @@ const categories = [
   "General Note",
 ];
 
-function isToday(isoString) {
-  const entryDate = new Date(isoString);
-  const today = new Date();
-  return (
-    entryDate.getFullYear() === today.getFullYear() &&
-    entryDate.getMonth() === today.getMonth() &&
-    entryDate.getDate() === today.getDate()
-  );
-}
 
-function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, currentUser }) {
+
+function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, onDeleteEntry, currentUser }) {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -106,10 +99,18 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, c
     setInitialAnswers(null);
   }
 
+  function handleDelete(id) {
+  const confirmed = window.confirm("Are you sure? It cannot be undone!");
+  if (confirmed) {
+    onDeleteEntry(id);
+  }
+}
+
   return (
     <div className="client-detail-page">
       <AppHeader activeTab="poc"/>
-      <div className="client-detail-content"></div>
+
+      <div className="client-detail-content">
       <p className="back-link" onClick={() => navigate("/")}>
         &larr; Back to Dashboard
       </p>
@@ -155,9 +156,13 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, c
               <span className="entry-category">{entry.category}</span>
               <span className="entry-value">{entry.value}</span>
               {entry.corrected && <span className="entry-tag">Corrected</span>}
+              <button className="entry-delete" onClick={() => handleDelete(entry.id)}>
+                Delete
+              </button>
             </div>
           ))
         )}
+      </div>
       </div>
 
       {duplicateEntry && (

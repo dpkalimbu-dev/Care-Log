@@ -59,3 +59,21 @@
 .app-header-right {
   text-align: right;
 }
+
+.logout-btn {
+  margin-top: 6px;
+  background: none;
+  border: 1px solid var(--color-text-muted);
+  color: var(--color-text);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-text);
+  border: none;
+}

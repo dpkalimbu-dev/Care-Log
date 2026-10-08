@@ -9,6 +9,11 @@
   display: flex;
 }
 
+.title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
 .header {
   justify-content: center;
   display: flex;
@@ -55,7 +60,7 @@
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 10px;
-  border: 1px solid rgb(161, 168, 168);
+  border: 1px solid rgba(100, 112, 117, 0.6);
   background-color: rgb(56, 61, 66);
   color: white;
   box-sizing: border-box;
