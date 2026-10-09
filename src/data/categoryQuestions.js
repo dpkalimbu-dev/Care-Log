@@ -17,7 +17,7 @@ export const categoryQuestions = {
     },
   ],
 
-  "Fluid Intake": [
+  "Fluied Intake": [
     {
       question: "FLUIED INTAKE: How many cups of fluid did resident drink?",
       type: "number",
@@ -30,9 +30,13 @@ export const categoryQuestions = {
       options: ["Yes", "No"],
     },
     {
+      question: "What was the amount of BM?",
+      options: ["Small", "Oozing", "Medium/Normal", "Large", "Extra-large", "N/A"],
+    },
+    {
       question: "What type?",
       options: ["Normal", "Loose", "Hard/Constipated", "N/A"],
-    //   showIf: { questionIndex: 0, equals: "Yes" },
+      showIf: { questionIndex: 0, equals: "Yes" },
     },
   ],
 
@@ -54,6 +58,18 @@ export const categoryQuestions = {
         "Setup help only",
         "One person physical assist",
         "Two person physical assist",
+      ],
+    },
+  ],
+
+  "Personal Hygiene": [
+    {
+      question: "PERSONAL HYGIENE- How does the resident maintain personal hygiene, including combing hair, brushing teeth (excluding bath and shower)",
+      options: [
+        "No setup or physical help from staff",
+        "Setup help only",
+        "One person physical assist",
+        "Two or more physical assist"
       ],
     },
   ],

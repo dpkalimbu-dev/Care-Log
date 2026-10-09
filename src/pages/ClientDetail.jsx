@@ -3,19 +3,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { clientList } from "../data/clients";
 import { formatTime } from "../utils/formatTime";
 import { isToday } from "../utils/isToday";
+import { categoryQuestions } from "../data/categoryQuestions";
 import AppHeader from "../components/AppHeader";
 import CategoryCard from "../components/CategoryCard";
 import LogEntryForm from "../components/LogEntryForm";
 import DuplicateEntryPrompt from "../components/DuplicateEntryPrompt";
+import ConfirmDialog from "../components/ConfirmDialog";
 import "./ClientDetail.css";
 
-const categories = [
-  "Food Intake",
-  "Fluid Intake",
-  "Bowel Movement",
-  "Transfer",
-  "General Note",
-];
+const categories = Object.keys(categoryQuestions);
 
 
 
@@ -28,6 +24,7 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, o
   const [initialAnswers, setInitialAnswers] = useState(null);
   const [duplicateEntry, setDuplicateEntry] = useState(null);
   const [duplicateCategory, setDuplicateCategory] = useState(null);
+  const [entryToDelete, setEntryToDelete] = useState(null);
 
   const client = clientList.find((c) => c.id === Number(id));
 
@@ -100,11 +97,13 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, o
   }
 
   function handleDelete(id) {
-  const confirmed = window.confirm("Are you sure? It cannot be undone!");
-  if (confirmed) {
-    onDeleteEntry(id);
-  }
-}
+      setEntryToDelete(id);
+    }
+
+  function confirmDelete() {
+      onDeleteEntry(entryToDelete);
+      setEntryToDelete(null);
+    }
 
   return (
     <div className="client-detail-page">
@@ -184,6 +183,16 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, o
           editingEntryId={editingEntryId}
           onSave={handleSaveEntry}
           onCancel={closeForm}
+        />
+      )}
+
+      {entryToDelete && (
+        <ConfirmDialog
+          title="Delete this entry?"
+          message="This cannot be undone."
+          confirmLabel="Delete"
+          onConfirm={confirmDelete}
+          onCancel={() => setEntryToDelete(null)}
         />
       )}
     </div>
