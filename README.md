@@ -6,7 +6,7 @@ Inspired by the daily documentation workflows I used as a healthcare worker.
 
 > **Demo data notice:** every client, staff member, schedule item, and notice in this project is fictional. No real client or patient information is used anywhere.
 
-Live demo  |  Demo login: kgurung / k123
+[Live demo](http://localhost:5173/) |  Demo login: kgurung / k123
 
 ![Home page](./assets/home.png)
 ![POC client grid](./assets/poc.png)
@@ -34,7 +34,7 @@ Live demo  |  Demo login: kgurung / k123
 
 **Client detail and care logging**
 
-- Five categories, each opening a modal with the questions that category needs
+- Six categories, each opening a modal with the questions that category needs
 - Structured inputs: button choices for assistance level and amount eaten, a number field for fluid intake, free text only for general notes
 - Conditional questions: "What type?" only appears after a bowel movement is recorded as "Yes"
 - Duplicate protection: logging a category that is already documented today prompts you to **edit** the existing entry or **log a correction**
@@ -51,12 +51,10 @@ Live demo  |  Demo login: kgurung / k123
 - **React Router** for page navigation and URL parameters (`/clients/:id`)
 - **Plain CSS** with custom properties as design tokens (colors, fonts, shadows)
 - **Bootstrap Icons** and **Google Fonts** (Fraunces and Inter)
-- **ESLint**
-- **localStorage** for persistence (no backend)
 
 ---
 
-## Getting started
+## Run locally
 
 ```bash
 git clone https://github.com/dpkalimbu-dev/care-log.git
@@ -75,10 +73,6 @@ Then open the local URL Vite prints (usually `http://localhost:5173`).
 | pgurung   | p123     |
 | badhikari | b123     |
 | dlimbu    | d123     |
-
-To reset the app to its starting state, clear this site's localStorage in your browser's dev tools.
-
----
 
 ## Project structure
 
@@ -99,37 +93,5 @@ src/
 ├── utils/            Small helpers: formatTime, isToday
 ├── App.jsx           Login gate, routes, and shared state
 └── index.css         Global styles and design tokens
+
 ```
-
----
-
-## Design decisions
-
-- **Questions are data, not hardcoded UI.** Each category's questions live in `categoryQuestions.js`, and one modal component renders whichever category is selected. Adding a category means adding data, not writing a new component.
-- **Structured input over free text.** Real point-of-care systems favor selectable options because they are faster to complete and more consistent to read back.
-- **Corrections preserve history.** Clinical records should not be silently overwritten, so a correction marks the old entry rather than deleting it.
-- **Derived data is calculated, not stored.** Avatar initials and colors, the dashboard counts, and the "documented today" status are all computed from the underlying data on each render.
-- **State lives in `App.jsx`.** Log entries and the logged-in user are held at the top and passed down, then mirrored to localStorage.
-
----
-
-## Known limitations
-
-- Passwords are stored in plain text in a local file because this is a front-end demo. A real application would hash passwords and authenticate on a server.
-- Data is stored per browser. There is no backend, so entries are not shared between devices or users.
-- Roles (for example caregiver versus supervisor) are not implemented.
-
-## Possible next steps
-
-- Backend and database (for example Firebase) with real authentication
-- Supervisor view with read-only access and flagged entries
-- Shift handoff summary and export to PDF
-- Structured vitals and more care categories
-- Automated tests with React Testing Library
-
----
-
-## Author
-
-**Your Name**
-[Portfolio](#) · [LinkedIn](#) · [GitHub](#)
