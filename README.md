@@ -6,9 +6,9 @@ Inspired by the daily documentation workflows I used as a healthcare worker.
 
 > **Demo data notice:** every client, staff member, schedule item, and notice in this project is fictional. No real client or patient information is used anywhere.
 
-[Live demo]("coming soon") |  Demo login: kgurung / k123
+[Live demo](https://care-log-seven.vercel.app/) |  Demo login: kgurung / k123
 
-![Home page](./src/assets/home.png/)
+![Home page](./src/assets/home.png)
 ![POC client grid](./src/assets/poc.png)
 ![Client detail with logging modal](./src/assets/client-detail.png)
 
@@ -36,7 +36,6 @@ Inspired by the daily documentation workflows I used as a healthcare worker.
 
 - Six categories, each opening a modal with the questions that category needs
 - Structured inputs: button choices for assistance level and amount eaten, a number field for fluid intake, free text only for general notes
-- Conditional questions: "What type?" only appears after a bowel movement is recorded as "Yes"
 - Duplicate protection: logging a category that is already documented today prompts you to **edit** the existing entry or **log a correction**
 - Corrections keep the original entry visible (struck through and tagged "Corrected") so nothing is silently erased
 - Delete with a custom confirmation dialog
