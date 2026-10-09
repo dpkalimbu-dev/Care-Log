@@ -6,11 +6,11 @@ Inspired by the daily documentation workflows I used as a healthcare worker.
 
 > **Demo data notice:** every client, staff member, schedule item, and notice in this project is fictional. No real client or patient information is used anywhere.
 
-[Live demo](http://localhost:5173/) |  Demo login: kgurung / k123
+[Live demo]("coming soon") |  Demo login: kgurung / k123
 
-![Home page](./assets/home.png)
-![POC client grid](./assets/poc.png)
-![Client detail with logging modal](./assets/client-detail.png)
+![Home page](./src/assets/home.png/)
+![POC client grid](./src/assets/poc.png)
+![Client detail with logging modal](./src/assets/client-detail.png)
 
 ---
 

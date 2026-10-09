@@ -64,6 +64,17 @@ export const categoryQuestions = {
 
   "Personal Hygiene": [
     {
+      question: "SUPPORT PROVIDED- How did the resident maintain personal hygiene?",
+      options:[
+        "Independent",
+        "Supervision",
+        "Limited Assistance",
+        "Extensive Assistance",
+        "Total Dependence",
+      ]
+
+    },
+    {
       question: "PERSONAL HYGIENE- How does the resident maintain personal hygiene, including combing hair, brushing teeth (excluding bath and shower)",
       options: [
         "No setup or physical help from staff",

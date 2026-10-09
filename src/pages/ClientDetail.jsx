@@ -37,8 +37,8 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, o
   }
 
   const clientEntries = logEntries.filter(
-    (entry) => entry.clientId === client.id
-  );
+  (entry) => entry.clientId === client.id && isToday(entry.timestamp)
+);
 
   function findTodayEntry(category) {
     return clientEntries.find(
@@ -141,7 +141,7 @@ function ClientDetail({ logEntries, onAddEntry, onUpdateEntry, onCorrectEntry, o
         ))}
       </div>
 
-      <p className="section-label">TODAY'S ENTRIES</p>
+      <p className="section-label">ENTRIES</p>
       <div className="entries-list">
         {clientEntries.length === 0 ? (
           <p className="empty-message">No entries logged yet.</p>
